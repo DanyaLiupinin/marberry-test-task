@@ -1,0 +1,23 @@
+.info-block {
+    box-sizing: border-box;
+    padding: 15px;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+@include active-by("xslg") {
+    .info-block h2 {
+        font-size: 18px;
+    }
+    
+}
+
+@include start-at("xslg") {
+    .info-block h2 {
+        font-size: 20px;
+    }
+    
+
+}
