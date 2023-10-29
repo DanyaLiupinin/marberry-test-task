@@ -1,4 +1,4 @@
-.info-block {
+.unloadMainCard {
     box-sizing: border-box;
     padding: 15px;
     width: 100%;
@@ -8,14 +8,14 @@
 }
 
 @include active-by("xslg") {
-    .info-block h2 {
+    .unloadMainCard h2 {
         font-size: 18px;
     }
     
 }
 
 @include start-at("xslg") {
-    .info-block h2 {
+    .unloadMainCard h2 {
         font-size: 20px;
     }
     

@@ -1,0 +1,14 @@
+.unloadCard {
+    padding: 15px;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.unloadCard_success {
+    border-left: 10px solid var(--color_success);
+}
+
+.unloadCard_danger {
+    border-left: 10px solid var(--color_danger);
+}
