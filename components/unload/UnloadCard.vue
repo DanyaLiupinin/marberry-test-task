@@ -1,18 +1,20 @@
 <template>
     <div class="block">
-        <div :class="'unloadCard_' + (props.status === 1 ? 'success' : 'danger')" class="unloadCard" @click="showDetailsView">
+        <div
+            :class="'unloadCard_' + (props.status === 1 ? 'success' : 'danger')" class="unloadCard"
+            @click="showDetailsView">
             <p>
-                Задача выполнена: <span class="text-bold">{{ props.date }}</span>
+                Задача выполнена: <span class="text-bold">{{ removeHtmlTags(props.date) }}</span>
             </p>
             <p>
-                Статус выдачи: <span class="text-bold">{{ props.status_text }}</span>
+                Статус выдачи: <span class="text-bold">{{ removeHtmlTags(props.status_text) }}</span>
             </p>
             <p>
-                ID выгрузки: <span class="text-bold">{{ props.id }}</span>
+                ID выгрузки: <span class="text-bold">{{ removeHtmlTags(props.id) }}</span>
             </p>
             <p>{{ removeHtmlTags(props.event) }}</p>
             <p>
-                Размер выгрузки: <span class="text-bold">{{ props.size }}</span>
+                Размер выгрузки: <span class="text-bold">{{ removeHtmlTags(props.size) }}</span>
             </p>
         </div>
     </div>
@@ -28,6 +30,10 @@ const showDetailsView = () => {
 };
 
 const props = defineProps({
+    removeHtmlTags: {
+        type: Function,
+        default: () => input => input
+    },
     date: {
         type: String,
         default: ""
@@ -60,8 +66,4 @@ const props = defineProps({
         default: ""
     }
 });
-
-const removeHtmlTags = input => {
-    return input.replace(/<[^>]+>/g, "");
-};
 </script>
