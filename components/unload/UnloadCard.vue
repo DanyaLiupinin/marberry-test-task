@@ -1,6 +1,6 @@
 <template>
     <div class="block">
-        <div class="unloadCard" :class="'unloadCard_' + (props.status === 1 ? 'success' : 'danger')">
+        <div :class="'unloadCard_' + (props.status === 1 ? 'success' : 'danger')" class="unloadCard" @click="showDetailsView">
             <p>
                 Задача выполнена: <span class="text-bold">{{ props.date }}</span>
             </p>
@@ -19,6 +19,14 @@
 </template>
 
 <script setup>
+import { defineProps, defineEmits } from "vue";
+
+const emits = defineEmits(["card-clicked"]);
+
+const showDetailsView = () => {
+    emits("card-clicked");
+};
+
 const props = defineProps({
     date: {
         type: String,

@@ -1,5 +1,5 @@
 <template>
-    <div class="block unloadMainCard">
+    <div class="block unloadInstruction">
         <h2 class="text-bold">{{ title }}</h2>
         <p class="text-bold">{{ subtitle }}</p>
         <slot/>

@@ -6,6 +6,10 @@
     transform: scale(1);
 }
 
+.unload div:last-child {
+    height: fit-content;
+}
+
 @include active-by("xslg") {
     .unload {
         grid-template-columns: 1fr;

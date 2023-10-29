@@ -1,4 +1,4 @@
-.unloadMainCard {
+.unloadInstruction {
     box-sizing: border-box;
     padding: 15px;
     width: 100%;
@@ -8,14 +8,14 @@
 }
 
 @include active-by("xslg") {
-    .unloadMainCard h2 {
+    .unloadInstruction h2 {
         font-size: 18px;
     }
     
 }
 
 @include start-at("xslg") {
-    .unloadMainCard h2 {
+    .unloadInstruction h2 {
         font-size: 20px;
     }
     
