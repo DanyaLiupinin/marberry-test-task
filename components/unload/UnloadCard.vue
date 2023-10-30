@@ -4,17 +4,17 @@
             :class="'unloadCard_' + (props.status === 1 ? 'success' : 'danger')" class="unloadCard"
             @click="showDetailsView">
             <p>
-                Задача выполнена: <span class="text-bold">{{ removeHtmlTags(props.date) }}</span>
+                Задача выполнена: <span class="text-bold">{{removeHtmlTags(props.date) }}</span>
             </p>
             <p>
                 Статус выдачи: <span class="text-bold">{{ removeHtmlTags(props.status_text) }}</span>
             </p>
             <p>
-                ID выгрузки: <span class="text-bold">{{ removeHtmlTags(props.id) }}</span>
+                ID выгрузки: <span class="text-bold">{{ props.id }}</span>
             </p>
             <p>{{ removeHtmlTags(props.event) }}</p>
             <p>
-                Размер выгрузки: <span class="text-bold">{{ removeHtmlTags(props.size) }}</span>
+                Размер выгрузки: <span class="text-bold">{{ props.size }}</span>
             </p>
         </div>
     </div>

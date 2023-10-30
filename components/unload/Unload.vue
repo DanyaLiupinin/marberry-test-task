@@ -1,11 +1,12 @@
 <template>
   <div class="unload">
 
-    <section class="unload-column_first">
-      <Info-block title="Выгрузка" subtitle="Выполняет работу">
+    <Unload-instructions class="unload-instructions" title="Выгрузка" subtitle="Выполняет работу">
         <p>- собирает фотографии из заказов пользователей</p>
         <p>- собирает фотографии из заказов пользователей</p>
-      </Info-block>
+      </Unload-instructions>
+
+    <div class="unload-cards">
       <UnloadCard
         v-for="item in response"
         :id="item.id"
@@ -19,9 +20,9 @@
         :remove-html-tags="removeHtmlTags"
         @card-clicked="showUnloadDetails(item)"
       />
-    </section>
+    </div>
 
-    <section class="unload-column_second">
+    <div class="unload-details">
       <div v-if="!showDetails" class="notice" data-color="light-purple">
         <p>
           Для того, чтобы просмотреть информацию о <span class="text-bold">выгрузке</span>, а также ее скачать, нажмите
@@ -29,14 +30,14 @@
         </p>
       </div>
       <UnloadDetails v-if="showDetails" :selected-card="selectedUnloadCard" :remove-html-tags="removeHtmlTags" @close-details="closeUnloadDetails"/>
-    </section>
+    </div>
     
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
-import InfoBlock from "./UnloadInstruction.vue";
+import UnloadInstructions from "./UnloadInstruction.vue";
 import UnloadCard from "./UnloadCard.vue";
 import { useAPIFetch } from "#imports";
 

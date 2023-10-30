@@ -10,14 +10,11 @@
 @include active-by("xslg") {
     .unloadInstruction h2 {
         font-size: 18px;
-    }
-    
+    } 
 }
 
 @include start-at("xslg") {
     .unloadInstruction h2 {
         font-size: 20px;
     }
-    
-
 }
